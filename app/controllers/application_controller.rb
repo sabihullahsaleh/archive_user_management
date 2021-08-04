@@ -1,12 +1,13 @@
 class ApplicationController < ActionController::API
   before_action :authorize!
 
-  private
-
+  protected
   def current_user
     user_id = JwtAuthenticationService.decode_token(request)
-    @user = User.find_by(id: user_id)
+    @current_user = User.find_by(id: user_id)
   end
+
+  private
 
   def logged_in?
     !!current_user
