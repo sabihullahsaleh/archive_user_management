@@ -21,12 +21,16 @@ gem 'jwt'
 
 # seriaization & json_api logic
 gem 'jsonapi.rb'
+gem "acts_as_archival"
+gem 'rswag-api'
+gem 'rswag-ui'
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.2'
+  gem 'rswag-specs'
 end
 
 group :development do
